@@ -1,0 +1,48 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container">
+    <a class="navbar-brand" href="#">Tienda Online</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" href="#home">Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" (click)="productos()">Ropa</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link">Novedades</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link">Tendencia</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link">Tallas</a>
+        </li>
+        <li *ngIf="!userName" class="nav-item">
+          <a class="nav-link" (click)="SingUp()">Iniciar Sesión</a>
+        </li>
+        <li *ngIf="userName" class="nav-item" style="line-height: 40px;">
+          <span style="margin: 10px;"><i class="bi bi-person-circle"></i></span>
+        </li>
+        <li *ngIf="userName" class="nav-item">
+          <a class="nav-link"> {{userName}}</a>
+        </li>
+        <li *ngIf="userName" class="nav-item">
+          <a class="nav-link" (click)="logout()">Cerrar Sesión</a>
+        </li>
+      </ul>
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search" />
+        <button class="btn btn-outline-success" type="submit">Buscar</button>
+      </form>
+    </div>
+    <div class="cart position-relative">
+      <span class="badge badge-danger position-absolute top-0 start-100 translate-middle" style="color: red;">0</span>
+      <span><i class="bi bi-cart4"></i></span>
+    </div>
+  </div>
+</nav>
